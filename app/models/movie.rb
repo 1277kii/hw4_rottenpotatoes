@@ -5,10 +5,10 @@ class Movie < ActiveRecord::Base
 
   def self.find_others_with_same_director (id)
     movie = Movie.find(id)
-    if !movie.nil?
+    #if !movie.nil?
       Movie.where('director = :director and id != :id', :director => movie.director, :id => movie.id)
-    else
-      []
-    end
+    #else
+    #  []
+    #end
   end
 end
